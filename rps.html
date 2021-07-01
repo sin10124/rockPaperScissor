@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> ~~~Rock paper scissors~~~</title>
+		<style>
+				body{background-color:aqua;}
+				h1{text-align:center; }
+				#p1,#p2,#p3{font-size:30px; text-align:center; color:Black}
+				.img1{position:relative; top:40%; left:30%}
+				.img2{position:relative; top:40%; left:35%}
+		</style>
+		
+</head>
+<body>
+			<h1> ~~~~~~STONE PAPER SCISSORS~~~~~~~</h1>
+			<p id="p1"></p>	
+			<p id="p2"></p>
+			
+			<img src="" width="250px" height="250px" alt="User choice" class="img1"/>
+			<img src="" width="250px" height="250px" alt="User choice" class="img2"/>
+			<p id="p3"></p>
+			
+	<script>
+			var choice = prompt("Enter 1 for paper or 2 for rock and 3 for scissors");
+			var compChoice = parseInt(Math.random()*3);
+			var status="";
+			if(choice==1)
+			{choice="PAPER";
+			document.getElementsByClassName("img1")[0].src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTFvqy8QGuSnZgAFxzOF2XH7zGMJMZCyPJwKGqb1HUedxfeOoEd&usqp=CAU";
+			}
+			if(choice==2)
+			{
+			choice="ROCK";
+			document.getElementsByClassName("img1")[0].src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296854_960_720.png";
+			}
+			if(choice==3)
+			{choice="SCISSORS";
+			document.getElementsByClassName("img1")[0].src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRI1-yRy8l3B8G0x_EB4XFxfG5yW7BrrYsU_SfaT_JSCgAeKc9S&usqp=CAU";
+			}
+			if(compChoice==0)
+			{compChoice="PAPER";
+			document.getElementsByClassName("img2")[0].src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTFvqy8QGuSnZgAFxzOF2XH7zGMJMZCyPJwKGqb1HUedxfeOoEd&usqp=CAU";
+			}
+			if(compChoice==1)
+			{
+			compChoice="ROCK";
+			document.getElementsByClassName("img2")[0].src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296854_960_720.png";
+			}
+			if(compChoice==2)
+			{
+			compChoice="SCISSORS";
+			document.getElementsByClassName("img2")[0].src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRI1-yRy8l3B8G0x_EB4XFxfG5yW7BrrYsU_SfaT_JSCgAeKc9S&usqp=CAU";
+			}
+			document.getElementById("p1").innerHTML="Your choice is= "+choice;
+			document.getElementById("p2").innerHTML="Computer choice is= "+compChoice;
+			if(choice=="ROCK"&&compChoice=="SCISSORS")
+			status = "YOU WIN";
+			if(choice=="PAPER"&&compChoice=="ROCK")
+			status = "YOU WIN";
+			if(choice=="SCISSORS"&&compChoice=="PAPER")
+			status = "YOU WIN";
+			if(choice=="ROCK"&&compChoice=="PAPER")
+			status = "YOU LOOSE";
+			if(choice=="PAPER"&&compChoice=="SCISSORS")
+			status = "YOU LOOSE";
+			if(choice=="SCISSORS"&&compChoice=="ROCK")
+			status = "YOU LOOSE";
+			if(choice==compChoice)
+			status="MATCH DRAW";
+			document.getElementById("p3").innerHTML=status;
+
+
+	</script>
+	
+		
+		
+</body>
+</html>
